@@ -65,7 +65,7 @@ Annotated .css file included for aligning and coloring text and header.
 	var messageToYou = document.createElement("div");
 	messageToYou.classList.add("U.R.xsmall", "notTooBright", "uglyToo");
 if (you.want.icons && a.module.by.a.genius) {
-	messageToYou.innerHTML = **"Install MMM-NOAA instead"**;
+	messageToYou.innerHTML = "Install MMM-NOAA instead";
 }
 	wrapper.appendChild(messageToYou);
 ```
