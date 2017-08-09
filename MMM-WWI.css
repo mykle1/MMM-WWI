@@ -1,0 +1,80 @@
+/* Copy and paste any or all of these css entries into your custom.css file inside your
+ * css folder. The functions are annotated to make things as easy as possible for you.
+ * Use any colors you want! Go to - "http://htmlcolorcodes.com/color-picker/"
+ * Pick your color, copy and paste the HEX number. Example - #62FF00 = bright green.
+ */
+
+.MMM-WWI .header {
+  color: white;               /* Header color. Default is white. */
+  text-align: left;           /* Algin header text  */
+}
+
+.MMM-WWI .photo { 
+/*  display: none;              uncomment if you don't want the picture at all */           
+  width: 95%;                /* adjust size of picture */
+  margin-left: 0px;          /* Precisely align picture with these */
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  float: left;
+}
+
+.MMM-WWI .summary {
+  color: #62FF00;               /* sunrise color. Default is white. */
+  text-align: left;           /* Align sunrise text  */
+}
+
+.MMM-WWI .chill {
+  color: white;               /* sunset color. Default is white. */
+  text-align: left;           /* Align sunset text  */
+}
+
+.MMM-WWI .ozone {
+  color: white;               /* solar_noon color. Default is white. */
+  text-align: left;            /* Align solar_noon text  */
+}
+
+.MMM-WWI .StormDistance {
+  color: white;               /* day_length color. Default is white. */
+  text-align: left;            /* Align day_length text  */
+}
+
+.MMM-WWI .StormBearing {
+  color: white;               /* civil_twilight_begin color. Default is white. */
+  text-align: left;            /* Align civil_twilight_begin text  */
+}
+
+.MMM-WWI .windSpeed {
+  color: white;               /* civil_twilight_end color. Default is white. */
+  text-align: left;            /* Align civil_twilight_end text  */
+}
+
+.MMM-WWI .windGust {
+  color: white;               /* nautical_twilight_begin color. Default is white. */
+  text-align: left;            /* Align nautical_twilight_begin text  */
+}
+
+.MMM-WWI .windBearing {
+  color: white;               /* nautical_twilight_end color. Default is white. */
+  text-align: left;            /* Align nautical_twilight_end text  */
+}
+
+.MMM-WWI .visibility {
+  color: white;               /* astronomical_twilight_begin color. Default is white. */
+  text-align: left;            /* Align astronomical_twilight_begin text  */
+}
+
+.MMM-WWI .pressure {
+  color: white;               /* astronomical_twilight_end color. Default is white. */
+  text-align: left;            /* Align astronomical_twilight_end text  */
+}
+
+.MMM-WWI .dewPoint {
+  color: white;               /* astronomical_twilight_end color. Default is white. */
+  text-align: left;            /* Align astronomical_twilight_end text  */
+}
+
+.MMM-WWI .uvIndex {
+  color: white;               /* astronomical_twilight_end color. Default is white. */
+  text-align: left;            /* Align astronomical_twilight_end text  */
+}
