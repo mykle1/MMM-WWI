@@ -31,7 +31,9 @@ He is one of those genius types that I am talking about. :^)
 
 ## Examples
 
-![](pix/WWI.JPG)
+* One with picture (#4) and one without picture
+
+![](pix/WWI.JPG), ![](pix/2.JPG)
 
 Annotated .css file included for aligning and coloring text and header.
 
