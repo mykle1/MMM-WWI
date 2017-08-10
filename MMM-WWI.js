@@ -137,6 +137,10 @@ Module.register("MMM-WWI", {
 		// distance of storm weather at this moment
         var distance = document.createElement("div");
         distance.classList.add("xsmall", "bright", "StormDistance");
+		if (WWI.currently.nearestStormDistance == 0){
+			distance.innerHTML = "";
+			wrapper.appendChild(distance);
+		} else
         distance.innerHTML = "A storm is " + WWI.currently.nearestStormDistance + " miles away!"; // can I put icon here too?
         wrapper.appendChild(distance);
 		
@@ -144,6 +148,10 @@ Module.register("MMM-WWI", {
 		// nearestStormBearing at this moment
         var nearestStormBearing = document.createElement("div");
         nearestStormBearing.classList.add("xsmall", "bright", "StormBearing");
+		if (WWI.currently.nearestStormBearin == 0){
+			distance.innerHTML = "";
+			wrapper.appendChild(nearestStormBearing);
+		} else
         nearestStormBearing.innerHTML = "Storm bearing is " + WWI.currently.nearestStormBearing + "°";
         wrapper.appendChild(nearestStormBearing);
 		
