@@ -73,14 +73,14 @@ Module.register("MMM-WWI", {
 		
 		
 ////////// alerts sre not always in the data /////////////////////////////////
-////////// but I want them when they do. How? //////////////////////////////
+////////// but I want them when they are. How? //////////////////////////////
     //    Alert object does not always appear in data ////////////////////////////////////
-		// How do I do it?
+		// Can it be done? How do I do it?
+		
+		// this isn't working. console reports undefined
 		// type of warning
     //    var type = document.createElement("div");
     //    type.classList.add("xsmall", "bright", "type");
-		
-////////// this isn't working. console reports title is undefined
 	//	if (WWI.alerts[0].title != undefined){
 	//		type.innerHTML = WWI.alerts[0].title + "!";
 	//	}
@@ -90,18 +90,18 @@ Module.register("MMM-WWI", {
 		// summary of weather at this moment
         var summary = document.createElement("div");
         summary.classList.add("small", "bright", "summary");
-        summary.innerHTML = WWI.currently.summary + " and " + Math.round(WWI.currently.temperature) + "° F at " + moment(WWI.time).local().format("h:mm A");
+        summary.innerHTML = WWI.currently.summary + " and " + Math.round(WWI.currently.temperature) + "°F at " + moment(WWI.time).local().format("h:mm A");
         wrapper.appendChild(summary);
 		
 		
 		// summary prediction of weather for coming week
         var summary = document.createElement("div");
         summary.classList.add("small", "bright", "summary");
-        summary.innerHTML = WWI.minutely.summary; // can I put icon here too?
+        summary.innerHTML = WWI.minutely.summary;
         wrapper.appendChild(summary);
 		
 	
-		// can I rotate the pictures during update interval?
+		// How can I rotate the pictures during update interval?
 	    // Choose a picture in config 1-13
         var pic = document.createElement("div");
         var img = document.createElement("img");
@@ -120,10 +120,10 @@ Module.register("MMM-WWI", {
         wrapper.appendChild(summary);
 		
 		
-		// heat index/wind chill
+		// heat index/wind chill (hard code temp color)
         var temperature = document.createElement("div");
         temperature.classList.add("xsmall", "bright", "chill");
-        temperature.innerHTML = "Heat index/Wind chill = " + Math.round(WWI.currently.apparentTemperature) + "° F";
+        temperature.innerHTML = "Heat index/Wind chill = " + "<font color=#62FF00>" + Math.round(WWI.currently.apparentTemperature) + "°F";
         wrapper.appendChild(temperature);
 		
 		
@@ -151,14 +151,14 @@ Module.register("MMM-WWI", {
 		// windSpeed at this moment
         var windSpeed = document.createElement("div");
         windSpeed.classList.add("xsmall", "bright", "windSpeed");
-        windSpeed.innerHTML = "Wind speed is " + WWI.currently.windSpeed + " mph";
+        windSpeed.innerHTML = "Wind speed is " + Math.round(WWI.currently.windSpeed) + " mph";
         wrapper.appendChild(windSpeed);
 		
 		
 		// windGust at this moment
         var windGust = document.createElement("div");
         windGust.classList.add("xsmall", "bright", "windGust");
-        windGust.innerHTML = "Wind gusts to " + WWI.currently.windGust + " mph";
+        windGust.innerHTML = "Wind gusts to " + Math.round(WWI.currently.windGust) + " mph";
         wrapper.appendChild(windGust);
 		
 		
@@ -177,6 +177,13 @@ Module.register("MMM-WWI", {
         wrapper.appendChild(visibility);
 		
 		
+		// cloudCover at this moment
+        var cloudCover = document.createElement("div");
+        cloudCover.classList.add("xsmall", "bright", "cloudCover");
+        cloudCover.innerHTML = "Cloud cover is " + WWI.currently.cloudCover + "%";
+        wrapper.appendChild(cloudCover);
+		
+		
 		// pressure at this moment
         var pressure = document.createElement("div");
         pressure.classList.add("xsmall", "bright", "pressure");
@@ -184,11 +191,27 @@ Module.register("MMM-WWI", {
         wrapper.appendChild(pressure);
 		
 		
+		// humidity at this moment
+        var humidity = document.createElement("div");
+        humidity.classList.add("xsmall", "bright", "humidity");
+        humidity.innerHTML = "Humidity is " + WWI.currently.humidity + "%";
+        wrapper.appendChild(humidity);
+		
+		
 		// dewPoint at this moment
         var dewPoint = document.createElement("div");
         dewPoint.classList.add("xsmall", "bright", "dewPoint");
-        dewPoint.innerHTML = "Dew point is " + WWI.currently.dewPoint;
+        dewPoint.innerHTML = "Dew point is " + Math.round(WWI.currently.dewPoint) + "°";
         wrapper.appendChild(dewPoint);
+		
+		
+		// trying icons for the fun of it // WORKING! //
+	//	var tryLogo = document.createElement("div");
+    //    var tryIcon = document.createElement("img");
+    //    tryIcon.classList.add("icon");
+    //    tryIcon.src = "modules/MMM-WWI/icons/clear.png";
+    //    tryLogo.appendChild(tryIcon);
+    //    wrapper.appendChild(tryLogo);
 		
 		
 		// uvIndex at this moment

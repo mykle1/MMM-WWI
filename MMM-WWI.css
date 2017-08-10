@@ -19,6 +19,16 @@
   float: left;
 }
 
+.MMM-WWI .icon { 
+/*  display: none;              uncomment if you don't want the picture at all */           
+  width: 10%;                /* adjust size of picture */
+  margin-left: 0px;          /* Precisely align picture with these */
+  margin-right: 135px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  float: right;
+}
+
 .MMM-WWI .summary {
   color: #62FF00;               /* sunrise color. Default is white. */
   text-align: left;           /* Align sunrise text  */
