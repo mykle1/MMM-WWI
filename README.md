@@ -23,7 +23,9 @@ He is one of those genius types that I am talking about. :^)
 * Wind gusts speed for your location at this moment
 * Wind bearing at this moment
 * Visibility (in miles) at this moment
+* Cloud cover at this moment
 * Barometer reading at this moment (in millibars)
+* Humidity at this moment
 * DewPoint reading at this moment
 * UV Index reading at this moment
 
