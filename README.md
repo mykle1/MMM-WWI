@@ -33,7 +33,7 @@ He is one of those genius types that I am talking about. :^)
 
 * One with picture (#4) and one without picture
 
-![](pix/WWI.JPG), ![](pix/2.JPG)
+![](pix/WWI.JPG), ![](pix/WWI2.JPG)
 
 Annotated .css file included for aligning and coloring text and header.
 
