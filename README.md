@@ -10,6 +10,10 @@ I'm still surprised that I can make *any* module work.
 That's mostly due to the patience and generosity of my friend at the forum.
 He is one of those genius types that I am talking about. :^)
 
+## Why would you use this module?
+
+It uses the minimum amount of screen real estate yet it gives you full weather conditions and forecast.
+
 ## The information 
 
 * Current conditions, temperature and time
