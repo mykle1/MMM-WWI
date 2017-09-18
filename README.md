@@ -12,7 +12,8 @@ He is one of those genius types that I am talking about. :^)
 
 ## Why would you use this module?
 
-It uses the minimum amount of screen real estate yet it gives you full weather conditions and forecast.
+* It uses the minimum amount of screen real estate yet it gives you full weather conditions and forecast.
+* You hate icons. **:^)**
 
 ## The information 
 
