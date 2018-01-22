@@ -10,7 +10,7 @@
 }
 
 .MMM-WWI .photo { 
-/*  display: none;              uncomment if you don't want the picture at all */           
+  display: none;              // comment if you want the picture */        
   width: 95%;                /* adjust size of picture */
   margin-left: 0px;          /* Precisely align picture with these */
   margin-right: 0px;

@@ -12,6 +12,7 @@ Module.register("MMM-WWI", {
         lat: "",                                  // latitude
         lng: "",                                  // longitude
 		pix: "1",                                 // 1-13
+		tempUnits: "C",		                      // C or F 
         useHeader: false,                         // true if you want a header      
         header: "Weather Without Icons",          // Any text you want. useHeader must be true
         maxWidth: "300px",
@@ -42,6 +43,11 @@ Module.register("MMM-WWI", {
     },
 
     getDom: function() {
+		
+		
+		function to_celcius (t) {
+		 	return (t - 32) * 5 / 9;              // convert celcius to fahrenheit
+		 }
 
         var wrapper = document.createElement("div");
         wrapper.className = "wrapper";
@@ -90,8 +96,14 @@ Module.register("MMM-WWI", {
 		// summary of weather at this moment
         var summary = document.createElement("div");
         summary.classList.add("small", "bright", "summary");
-        summary.innerHTML = WWI.currently.summary + " and " + Math.round(WWI.currently.temperature) + "°F at " + moment(WWI.time).local().format("h:mm A");
-        wrapper.appendChild(summary);
+		
+	if (this.config.tempUnits != "F") {
+			summary.innerHTML = WWI.currently.summary + " and " + Math.round(to_celcius(WWI.currently.temperature)) + "°C at " + moment(WWI.time).local().format("h:mm A");
+			wrapper.appendChild(summary);
+		} else {
+			summary.innerHTML = WWI.currently.summary + " and " + Math.round(WWI.currently.temperature) + "°F at " + moment(WWI.time).local().format("h:mm A");
+			wrapper.appendChild(summary);
+		}
 		
 		
 		// summary prediction of weather for coming week
@@ -123,8 +135,13 @@ Module.register("MMM-WWI", {
 		// heat index/wind chill (hard code temp color)
         var temperature = document.createElement("div");
         temperature.classList.add("xsmall", "bright", "chill");
-        temperature.innerHTML = "Heat index/Wind chill = " + "<font color=#62FF00>" + Math.round(WWI.currently.apparentTemperature) + "°F";
-        wrapper.appendChild(temperature);
+	if (this.config.tempUnits != "F") {
+			temperature.innerHTML = "Heat index/Wind chill = " +  Math.round(to_celcius(WWI.currently.apparentTemperature)) + "°C at " + moment(WWI.time).local().format("h:mm A");
+			wrapper.appendChild(temperature);
+	} else {
+			temperature.innerHTML = "Heat index/Wind chill = " +  Math.round(WWI.currently.apparentTemperature) + "°F";
+			wrapper.appendChild(temperature); 
+		}
 		
 		
 		// ozone at this moment
@@ -209,8 +226,13 @@ Module.register("MMM-WWI", {
 		// dewPoint at this moment
         var dewPoint = document.createElement("div");
         dewPoint.classList.add("xsmall", "bright", "dewPoint");
-        dewPoint.innerHTML = "Dew point is " + Math.round(WWI.currently.dewPoint) + "°";
-        wrapper.appendChild(dewPoint);
+	if (this.config.tempUnits != "F") {
+			dewPoint.innerHTML = "Dew point is " + Math.round(to_celcius(WWI.currently.dewPoint)) + "°C";
+			wrapper.appendChild(dewPoint);
+	} else {
+			dewPoint.innerHTML = "Dew point is " + Math.round(WWI.currently.dewPoint) + "°F";
+			wrapper.appendChild(dewPoint);
+		}
 		
 		
 		// trying icons for the fun of it // WORKING! //
@@ -228,10 +250,10 @@ Module.register("MMM-WWI", {
         uvIndex.innerHTML = "UV Index is " + WWI.currently.uvIndex;
         wrapper.appendChild(uvIndex);
 	
-	
         return wrapper;
+		
     },
-
+	
 
     processWWI: function(data) {
         this.today = data.Today;

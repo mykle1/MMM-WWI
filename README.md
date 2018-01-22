@@ -62,7 +62,8 @@ Annotated .css file included for aligning and coloring text and header.
 			apiKey: "YOUR API KEY GOES HERE", // Free API key @ https://darksky.net
 			lat: "YOUR LATITUDE GOES HERE",   // Your latitude goes here
 			lng: "YOUR LONGITUDE GOES HERE",  // Your longitude goes here
-			pix: "4",                         // 1-13
+			tempUnits: "C",		              // C or F 
+			pix: "4",                         // 1-13 Comment out display: none in css file
 			useHeader: false,                 // true if you want a header                 
 			header: "Weather Without Icons",
 			maxWidth: "300px",
